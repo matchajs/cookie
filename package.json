@@ -1,0 +1,8 @@
+{
+    "name": "cookie",
+    "version": "1.0.0",
+    "root": "matcha",
+    "output": {
+        "cookie.js": "."
+    }
+}
