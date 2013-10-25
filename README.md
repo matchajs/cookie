@@ -25,7 +25,7 @@
 例子：
 ```js
 define(function(require, exports, module) {
-    var Cookie = require('./cookie');
+    var Cookie = require('cookie');
 
     Cookie.set('age', '25', {
         expires: 7,
@@ -55,7 +55,7 @@ define(function(require, exports, module) {
 例子：
 ```js
 define(function(require, exports, module) {
-    var Cookie = require('./cookie');
+    var Cookie = require('cookie');
 
     Cookie.get('age'); // return 25
 
@@ -82,7 +82,7 @@ define(function(require, exports, module) {
 例子：
 ```js
 define(function(require, exports, module) {
-    var Cookie = require('./cookie');
+    var Cookie = require('cookie');
 
     Cookie.get('age'); // return 25
     Cookie.del('age');

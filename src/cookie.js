@@ -12,8 +12,8 @@
  */
 define(function(require, exports, module) {
     // Helpers
-    var doc = window.document,
-        MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
+    var doc = window.document;
+    var MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
 
     function encode(str) {
         return encodeURIComponent(str);
