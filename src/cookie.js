@@ -3,17 +3,17 @@
  * Cookie Models
  * 
  * Thanks:
- *      https://github.com/carhartl/jquery-cookie
- *      https://github.com/kissyteam/kissy/blob/master/src/cookie/src/cookie.js
- *      http://www.nczonline.net/blog/2009/05/05/http-cookies-explained/
+ *  - https://github.com/carhartl/jquery-cookie
+ *  - https://github.com/kissyteam/kissy/blob/master/src/cookie/src/cookie.js
+ *  - http://www.nczonline.net/blog/2009/05/05/http-cookies-explained/
  *
  * @author kidney<kidneyleung@gmail.com>
  *
  */
 define(function(require, exports, module) {
-// Helper
-var doc = window.document,
-    MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
+    // Helpers
+    var doc = window.document,
+        MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
 
     function encode(str) {
         return encodeURIComponent(str);
@@ -29,10 +29,10 @@ var doc = window.document,
     module.exports = {
         /**
          * get cookie value for given the name
-         * @param {string} name - access to the specified value of the cookie
-         * @param {object} options - config param
+         * @param {String} name - access to the specified value of the cookie
+         * @param {Object} options - config param
          *                      decode - it's use decodeURIComponent?
-         * @return {string} - If name does not exist, will return undefined
+         * @return {String} - If name does not exist, will return undefined
          */
         get: function(name, options) {
             options = options || {};
@@ -51,8 +51,8 @@ var doc = window.document,
 
         /**
          * set cookie for given name and at least value
-         * @param {string} name - cookie name
-         * @param {string|int} val - cookie values
+         * @param {String} name - cookie name
+         * @param {String|Integer} val - cookie values
          * @param {object} options - config param
          */
         set: function(name, val, options) {
