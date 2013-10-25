@@ -51,6 +51,7 @@ define(function(require, exports, module) {
 获取指定cookie
 
 **参数**
+
 `name` cookie名
 
 `options` 高级配置，有以下功能：
