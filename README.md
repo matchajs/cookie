@@ -5,13 +5,6 @@
 ---
 
 
-##模块依赖
-
-- seajs
-
----
-
-
 ##使用说明
 
 ###set `Cookie.set(name, val, options)`
@@ -19,6 +12,7 @@
 设置cookie
 
 **参数**
+
 `name` cookie名
 
 `val` cookie值
