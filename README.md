@@ -16,7 +16,6 @@
 1. `name` cookie名
 2. `val` cookie值
 3. `options` 高级配置，有以下功能：
-
 + `encode` 是否进行编码
 + `expires` 过期时间, 单位:天
 + `domain` 有效域名
@@ -25,7 +24,6 @@
 
 
 例子：
-
 ```js
 define(function(require, exports, module) {
     var Cookie = require('./cookie');
@@ -53,12 +51,10 @@ define(function(require, exports, module) {
 
 1. `name` cookie名
 2. `options` 高级配置，有以下功能：
-
 + `encode` 是否进行编码
 
 
 例子：
-
 ```js
 define(function(require, exports, module) {
     var Cookie = require('./cookie');
@@ -81,7 +77,6 @@ define(function(require, exports, module) {
 
 1. `name` cookie名
 2. `options` 高级配置，有以下功能：
-
 + `domain` 有效域名
 + `path` 有效路径
 + `secure` 是否安全设置
