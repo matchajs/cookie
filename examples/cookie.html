@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk">
+<title>cookie examples</title>
+<link charset="utf-8" rel="stylesheet" href="http://www.poco.cn/css_common/normalize/3.0.0/normalize.css">
+<script src="http://cb.poco.cn/seajs/2.1.1/sea.js"></script>
+<!--[if lt IE 9]>
+<script src="http://cb.poco.cn/utility/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+<script>
+seajs.config({
+    paths: {
+        utility: 'http://cb.poco.cn/utility',
+        matcha: 'http://cb.poco.cn/matcha'
+    },
+    alias:{
+        jquery: 'utility/jquery/1.8.3/jquery',
+        'jquery-debug': 'utility/jquery/1.8.3/jquery-debug'
+    },
+    charset: 'utf-8'
+});
+</script>
+</head>
+
+<body>
+    <div class="global-container">
+        <section class="example-content">
+            <h3 id="1-设置cookie">1. 设置cookie</h3>
+            <div class="example">
+                <p>cookie名：<input id="set-cookie-name-input" value=""></p>
+                <p>cookie值：<input id="set-cookie-val-input" value=""></p>
+                <p>cookie有效期：<input id="set-cookie-expires-input" value="">天</p>
+                <p><button type="button" id="set-cookie-button">设置</button></p>
+                <p><textarea id="example1"></textarea></p>
+            </div>
+            <script>
+            seajs.use(['jquery', '../src/cookie'], function($, Cookie) {
+                $('#set-cookie-button').click(function() {
+                    var name = $('#set-cookie-name-input').val();
+                    var val = $('#set-cookie-val-input').val();
+                    var expires = $('#set-cookie-expires-input').val();
+
+                    Cookie.set(name, val, {
+                        expires: parseInt(expires, 10),
+                        domain: document.domain,
+                        path: '/'
+                    });
+
+                    $('#example1').html(document.cookie);
+                });
+            });
+            </script>
+        </section>
+
+        <section class="example-content">
+            <h3 id="2-获取cookie">2. 获取cookie</h3>
+            <div class="example">
+                <p id="all-cookie"></p>
+                <p><input id="get-cookie-input" value=""></p>
+                <p><button type="button" id="get-cookie-button">获取</button></p>
+                <p><textarea id="example2"></textarea></p>
+            </div>
+            <script>
+            seajs.use(['jquery', '../src/cookie'], function($, Cookie) {
+                $('#all-cookie').html(document.cookie);
+
+                $('#get-cookie-button').click(function() {
+                    var val = $('#get-cookie-input').val();
+                    $('#example2').html(Cookie.get(val));
+                });
+            });
+            </script>
+        </section>
+
+        <section class="example-content">
+            <h3 id="3-删除cookie">3. 删除cookie</h3>
+            <div class="example">
+                <p id="all-cookie"></p>
+                <p><input id="det-cookie-name-input" value=""></p>
+                <p><button type="button" id="det-cookie-button">删除</button></p>
+            </div>
+            <script>
+            seajs.use(['jquery', '../src/cookie'], function($, Cookie) {
+                $('#all-cookie').html(document.cookie);
+
+                $('#det-cookie-button').click(function() {
+                    var name = $('#det-cookie-name-input').val();
+
+                    Cookie.del(name);
+
+                    $('#all-cookie').html(document.cookie);
+                });
+            });
+            </script>
+            <script>
+            seajs.use(['jquery', '../src/cookie'], function($, Cookie) {
+                
+            });
+            </script>
+        </section>
+    </div>
+</body>
+</html>

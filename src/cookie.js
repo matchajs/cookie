@@ -11,28 +11,13 @@
  *
  */
 define(function(require, exports, module) {
-    // Helpers
-    var doc = window.document;
-    var MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
-
-    function encode(str) {
-        return encodeURIComponent(str);
-    }
-    function decode(str) {
-        return decodeURIComponent(str.replace(/\+/g, ' '));
-    }
-
-    function isNotEmptyStr(str) {
-        return (typeof str === 'string') && str !== '';
-    }
-
     module.exports = {
         /**
-         * get cookie value for given the name
-         * @param {String} name - access to the specified value of the cookie
-         * @param {Object} options - config param
-         *                      decode - it's use decodeURIComponent?
-         * @return {String} - If name does not exist, will return undefined
+         * 获取cookie值
+         *
+         * @param name
+         * @param options
+         * @returns {*}
          */
         get: function(name, options) {
             options = options || {};
@@ -50,10 +35,12 @@ define(function(require, exports, module) {
         },
 
         /**
-         * set cookie for given name and at least value
-         * @param {String} name - cookie name
-         * @param {String|Integer} val - cookie values
-         * @param {object} options - config param
+         * 设置cookie
+         *
+         * @param name
+         * @param val
+         * @param options
+         * @returns {*|string}
          */
         set: function(name, val, options) {
             options = options || {};
@@ -91,15 +78,19 @@ define(function(require, exports, module) {
             }
 
             doc.cookie = name + '=' + text;
+
+            return text;
         },
 
+
         /**
-         * delete cookie
-         * @param {string} name
-         * @param {object} options - config param
+         * 删除cookie
+         * @param name
+         * @param options
+         * @returns {*|string}
          */
         del: function(name, options) {
-            this.set(name, '', {
+            return this.set(name, '', {
                 expires: -1,
                 domain: options.domain,
                 path: options.path,
@@ -107,4 +98,19 @@ define(function(require, exports, module) {
             });
         }
     };
+
+    // Helpers
+    var doc = window.document;
+    var MILLISECONDS_OF_DAY = 24 * 60 * 60 * 1000;
+
+    function encode(str) {
+        return encodeURIComponent(str);
+    }
+    function decode(str) {
+        return decodeURIComponent(str.replace(/\+/g, ' '));
+    }
+
+    function isNotEmptyStr(str) {
+        return (typeof str === 'string') && str !== '';
+    }
 });
