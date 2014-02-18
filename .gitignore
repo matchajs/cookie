@@ -1,8 +1,9 @@
 ~*
+*~
 *.iml
 *.ipr
 *.iws
-Thumbs.db
-.svn/
 .idea/
-node_modules/
+.svn/
+.DS_Store
+Thumbs.db
